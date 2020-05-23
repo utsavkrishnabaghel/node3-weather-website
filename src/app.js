@@ -14,8 +14,8 @@ const forecast = require('./utils/forecast')
 //console.log(path.join(__dirname, "../public"));
 
 const app = express();
-
-//define paths for express config
+const port = process.env.PORT || 3000
+    //define paths for express config
 
 const publicDirectoryPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -250,8 +250,8 @@ app.get("*", (req, res) => {
 //     --------help article not found
 // 4. test your work,visit /what and /help/units
 
-app.listen(3000, () => {
-    console.log("server is up on the port 3000");
+app.listen(port, () => {
+    console.log("server is up on the port " + port);
 });
 
 // we can start up the server by just using node.
